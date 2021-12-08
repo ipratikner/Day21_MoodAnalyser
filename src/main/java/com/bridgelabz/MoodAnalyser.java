@@ -2,7 +2,7 @@ package com.bridgelabz;
 
 public class MoodAnalyser {
     public String message;
-    //constructor of class
+    //constructor class
     public MoodAnalyser() {
     }
     public MoodAnalyser(String message) {
@@ -13,7 +13,7 @@ public class MoodAnalyser {
         this.message = message;
         return analyseMood();
     }
-    //analyseMood method
+    //analyseMood method and handling NullPointerException
     public String analyseMood() {
         try {
             if (message.contains("SAD"))
