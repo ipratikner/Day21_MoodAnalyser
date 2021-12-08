@@ -8,19 +8,18 @@ public class MoodAnalyser {
     public MoodAnalyser(String message) {
         this.message = message;
     }
-    //analyseMood instance method
-    public String analyseMood(String message) {
-        this.message = message;
-        return analyseMood();
-    }
-    //analyseMood method and handling NullPointerException
-    public String analyseMood() {
+    public String analyseMood()  {
         try {
-            if (message.contains("SAD"))
+            this.message = message;
+            if (message == null || message.isEmpty())
+            {
+                throw new MoodAnalysisException();
+            }
+            if(message.contains("sad"))
                 return "SAD";
             else
                 return "HAPPY";
-        }catch (NullPointerException e){
+        } catch (MoodAnalysisException e) {
             return "HAPPY";
         }
     }
